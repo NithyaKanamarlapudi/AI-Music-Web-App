@@ -7,3 +7,11 @@
 .note{
     font-size: 15px;
 }
+
+canvas{
+    color: white;
+    border-color: rgb(223, 143, 255);
+    border-width: 6px;
+    border-radius: 25px;
+    border-style: dotted;
+}
