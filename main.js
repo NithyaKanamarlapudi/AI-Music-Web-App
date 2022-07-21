@@ -4,6 +4,8 @@ leftWristX = 0;
 rightWristX = 0;
 leftWristY = 0;
 rightWristY = 0;
+scoreleftWrist= results[0].pose.keypoints[9].score;
+scorerightWrist= results[0].pose.keypoints[10].score;
  function preload() {
      song1 = loadSound("music.mp3");
      song2 = loadSound("music2.mp3");
@@ -35,4 +37,16 @@ function gotPoses(results){
 
  function draw() {
      image(video, 0, 0, 400, 400);
+
+
+     fill("#FF0000");
+     stroke("#FF0000");
+     if (scoreleftWrist > 0.2){
+     circle(leftWristX,leftWristY,40);
+     InNumberleftWristY = Number(leftWristY);
+     removeDecimals= floor(InNumberleftWristY);
+     volume= removeDecimals/500;
+     document.getElementById("volume").innerHTML="Volume = " + volume;
+     song.setVolume(volume);
  }
+}
